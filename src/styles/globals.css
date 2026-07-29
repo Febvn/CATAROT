@@ -378,6 +378,7 @@ body {
     .about {
         min-height: auto;
         padding: 3% 10% 5%;
+        justify-content: center;
     }
 
     .about h2 {
@@ -424,7 +425,7 @@ body {
     }
 
     .flip-card {
-        width: 170px;
+        width: 140px;
     }
 
     .flip-card .flip-front img {
@@ -456,7 +457,8 @@ body {
 
     .about {
         min-height: auto;
-        padding: 3% 10% 5%;
+        padding: 3% 5% 5%;
+        justify-content: center;
     }
 
     .about h2 {
@@ -465,7 +467,7 @@ body {
     }
 
     .about p {
-        width: 90%;
+        width: 100%;
         font-size: 0.75rem;
     }
 
@@ -487,21 +489,21 @@ body {
     }
 
     .card-row {
-        gap: 10px;
+        gap: 5px;
         align-items: center;
         margin-top: 0;
     }
 
     .flip-card {
-        width: 130px;
+        width: 100px;
     }
 
     .flip-card .flip-front img {
-        border-radius: 8px;
+        border-radius: 6px;
     }
 
     .flip-back {
-        border-radius: 8px;
+        border-radius: 6px;
     }
 
     .card-back {
