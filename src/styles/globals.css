@@ -370,7 +370,8 @@ body {
 
     .about {
         min-height: 100vh;
-        padding: 3% 10%;
+        padding: 5% 10% 3%;
+        justify-content: space-between;
     }
 
     .about h2 {
@@ -410,7 +411,9 @@ body {
     .card-row {
         flex-direction: row;
         justify-content: center;
+        align-items: center;
         gap: 15px;
+        flex: 1;
     }
 
     .flip-card {
@@ -446,7 +449,8 @@ body {
 
     .about {
         min-height: 100vh;
-        padding: 3% 10%;
+        padding: 5% 10% 3%;
+        justify-content: space-between;
     }
 
     .about h2 {
@@ -477,6 +481,8 @@ body {
 
     .card-row {
         gap: 10px;
+        flex: 1;
+        align-items: center;
     }
 
     .flip-card {
