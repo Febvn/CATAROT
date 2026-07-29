@@ -50,7 +50,7 @@ function Home() {
             </div>
           ))}
         </div>
-        <p className='credit'>Kecil Created By Febvn</p>
+        <p className='credit'>Created By Febvn</p>
       </div>
 
       {selectedCard && (
