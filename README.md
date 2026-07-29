@@ -1,41 +1,41 @@
-﻿# CATAROT 🐱🔮
+﻿# CATAROT
 
-> Tarot card reader with a cat twist — interactive, mystical, and fun.
+> Tarot card reader with a cat twist - it is interactive, mystical, fun, and full of delightful surprises and deep spiritual insights.
 
-Curiosity killed the cat? **Ask Meow!** Flip tarot cards, get mystical readings, and let the universe guide you. Built with Next.js and GSAP for a smooth parallax experience.
-
----
-
-## 📋 Table of Contents
-
-- [Features](#-features)
-- [Tech Stack](#-tech-stack)
-- [Getting Started](#-getting-started)
-- [Project Structure](#-project-structure)
-- [Language Detection](#-language-detection)
-- [GSAP Parallax Effect](#-gsap-parallax-effect)
-- [Tarot Card Gallery](#-tarot-card-gallery)
-- [Card Meanings System](#-card-meanings-system)
-- [Mobile Responsiveness](#-mobile-responsiveness)
-- [Browser Support](#-browser-support)
-- [Deployment](#-deployment)
-- [Performance](#-performance)
-- [Credits](#-credits)
+Curiosity killed the cat? **Ask Meow!** Flip mystical tarot cards right now, get mystical readings, and let the universe guide your path forward every day. This project is built with Next.js and GSAP for a smooth parallax experience with beautifully animated card flips.
 
 ---
 
-## ✨ Features
+## Table of Contents
 
-- **Interactive 3-Card Tarot Flip** — Click any card slot to flip and reveal a random Major Arcana card. Tap the flipped card to open a detailed reading modal.
-- **GSAP Parallax Animation** — A full-screen parallax experience with animated sun, moon, stars, clouds, and three mountain layers. The background gradient shifts dynamically based on scroll position, transitioning from deep blue through purple to warm yellow.
-- **Auto Language Detection** — The app detects the visitor's country using IP geolocation via ip-api.com. If the country is Indonesia (ID), the interface displays in Indonesian. For all other countries, it defaults to English. If the API call fails, it falls back to the browser's `navigator.language` setting.
-- **Fully Responsive Design** — The layout adapts seamlessly from large desktop screens down to the smallest mobile phones. Card sizes, font sizes, spacing, and modal layouts all scale using CSS `clamp()` functions.
-- **Built-in Modal Reading System** — Each card flip generates a random mystical meaning from a curated set of interpretations. The modal shows the card artwork alongside the reading text, with a clean overlay design.
-- **No Two Readings Are the Same** — Each card in the Major Arcana has between 20 and 30 unique meaning entries. The `getRandomMeaning` function selects one at random, ensuring a fresh experience every time.
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Getting Started](#getting-started)
+- [Project Structure](#project-structure)
+- [Language Detection](#language-detection)
+- [GSAP Parallax Effect](#gsap-parallax-effect)
+- [Tarot Card Gallery](#tarot-card-gallery)
+- [Card Meanings System](#card-meanings-system)
+- [Mobile Responsiveness](#mobile-responsiveness)
+- [Browser Support](#browser-support)
+- [Deployment](#deployment)
+- [Performance](#performance)
+- [Credits](#credits)
 
 ---
 
-## 🛠 Tech Stack
+## Features
+
+- **Interactive 3-Card Tarot Flip** - Click any card slot to flip and reveal a random Major Arcana card. Tap the flipped card to open a detailed reading modal.
+- **GSAP Parallax Animation** - A full-screen parallax experience with animated sun, moon, stars, clouds, and three mountain layers. The background gradient shifts dynamically based on scroll position, transitioning from deep blue through purple to warm yellow.
+- **Auto Language Detection** - The app detects the visitor's country using IP geolocation via ip-api.com. If the country is Indonesia (ID), the interface displays in Indonesian. For all other countries, it defaults to English. If the API call fails, it falls back to the browser's `navigator.language` setting.
+- **Fully Responsive Design** - The layout adapts seamlessly from large desktop screens down to the smallest mobile phones. Card sizes, font sizes, spacing, and modal layouts all scale using CSS `clamp()` functions.
+- **Built-in Modal Reading System** - Each card flip generates a random mystical meaning from a curated set of interpretations. The modal shows the card artwork alongside the reading text, with a clean overlay design.
+- **No Two Readings Are the Same** - Each card in the Major Arcana has between 20 and 30 unique meaning entries. The `getRandomMeaning` function selects one at random, ensuring a fresh experience every time.
+
+---
+
+## Tech Stack
 
 | Technology | Version | Purpose |
 |------------|---------|---------|
@@ -43,9 +43,9 @@ Curiosity killed the cat? **Ask Meow!** Flip tarot cards, get mystical readings,
 | **React** | 18.2.0 | UI component library |
 | **GSAP** | 3.11.5 | Professional-grade animation library for the parallax effect |
 | **GSAP ScrollTrigger** | bundled | Scroll-driven animation plugin for pinning and scrub-based timelines |
-| **CSS3** | — | Flexbox, Grid, clamp() for responsive design, CSS custom properties |
-| **ip-api.com** | — | Free IP geolocation API for language detection |
-| **Vercel** | — | Deployment platform with automatic HTTPS and CDN |
+| **CSS3** | - | Flexbox, Grid, clamp() for responsive design, CSS custom properties |
+| **ip-api.com** | - | Free IP geolocation API for language detection |
+| **Vercel** | - | Deployment platform with automatic HTTPS and CDN |
 
 ### Badges
 
@@ -58,7 +58,7 @@ Curiosity killed the cat? **Ask Meow!** Flip tarot cards, get mystical readings,
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -92,52 +92,52 @@ npm start
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 CATAROT/
-├── public/
-│   ├── images/              # Tarot card artwork & card back
-│   │   ├── 0. The Fool.png
-│   │   ├── 1. The Magician.png
-│   │   ├── ... (22 cards)
-│   │   ├── back.JPG
-│   │   ├── back.png
-│   │   └── favicon.png
-│   └── parallax/             # SVG layers for the parallax scene
-│       ├── mountain-1.svg
-│       ├── mountain-2.svg
-│       ├── mountain-3.svg
-│       ├── sun.svg
-│       ├── moon.svg
-│       ├── stars.svg
-│       ├── cloud-bottom.svg
-│       ├── clouds-left.svg
-│       └── clouds-right.svg
-├── src/
-│   ├── components/
-│   │   └── Parallax.js       # GSAP parallax animation component
-│   ├── data/
-│   │   └── tarotData.js      # All 22 cards with meanings & negative meanings
-│   ├── pages/
-│   │   ├── _app.js           # Next.js app wrapper
-│   │   ├── _document.js      # Custom HTML document with fonts & favicon
-│   │   └── index.js          # Main page with card flip logic & modal
-│   ├── styles/
-│   │   └── globals.css       # All styles with responsive breakpoints
-│   └── utils/
-│       └── lang.js           # Language detection utility (IP + browser)
-├── Assets/                   # Original source images
-├── .gitignore
-├── jsconfig.json             # Path alias @/ for src/
-├── next.config.js            # Next.js configuration
-├── package.json
-└── vercel.json               # Vercel framework detection
++-- public/
+- +-- images/ # Tarot card artwork & card back
+- - +-- 0. The Fool.png
+- - +-- 1. The Magician.png
+- - +-- ... (22 cards)
+- - +-- back.JPG
+- - +-- back.png
+- - +-- favicon.png
+- +-- parallax/ # SVG layers for the parallax scene
+- +-- mountain-1.svg
+- +-- mountain-2.svg
+- +-- mountain-3.svg
+- +-- sun.svg
+- +-- moon.svg
+- +-- stars.svg
+- +-- cloud-bottom.svg
+- +-- clouds-left.svg
+- +-- clouds-right.svg
++-- src/
+- +-- components/
+- - +-- Parallax.js # GSAP parallax animation component
+- +-- data/
+- - +-- tarotData.js # All 22 cards with meanings & negative meanings
+- +-- pages/
+- - +-- _app.js # Next.js app wrapper
+- - +-- _document.js # Custom HTML document with fonts & favicon
+- - +-- index.js # Main page with card flip logic & modal
+- +-- styles/
+- - +-- globals.css # All styles with responsive breakpoints
+- +-- utils/
+- +-- lang.js # Language detection utility (IP + browser)
++-- Assets/ # Original source images
++-- .gitignore
++-- jsconfig.json # Path alias @/ for src/
++-- next.config.js # Next.js configuration
++-- package.json
++-- vercel.json # Vercel framework detection
 ```
 
 ---
 
-## 🌐 Language Detection
+## Language Detection
 
 CATAROT features automatic language detection that works in two layers:
 
@@ -163,20 +163,20 @@ The detected language is cached in a module-level variable so that subsequent ca
 
 ```javascript
 const texts = {
-  id: { 
-    title: 'Katakan Apa yang Ingin Kamu Ketahui Meooww!!', 
-    credit: 'Dibuat Oleh Febvn' 
-  },
-  en: { 
-    title: 'Curiosity Killed the Cat? Ask Meow!', 
-    credit: 'Created By Febvn' 
-  },
+id: {
+title: 'Katakan Apa yang Ingin Kamu Ketahui Meooww!!',
+credit: 'Dibuat Oleh Febvn'
+},
+en: {
+title: 'Curiosity Killed the Cat? Ask Meow!',
+credit: 'Created By Febvn'
+},
 }
 ```
 
 ---
 
-## 🎠 GSAP Parallax Effect
+## GSAP Parallax Effect
 
 The parallax section is built using **GSAP** (GreenSock Animation Platform) with the **ScrollTrigger** plugin. Here is how it works:
 
@@ -184,12 +184,12 @@ The parallax section is built using **GSAP** (GreenSock Animation Platform) with
 
 The parallax scene consists of 10 layered SVG elements:
 
-1. **Background** — A CSS gradient that transitions from `#0F2B9C` (deep blue) through `#673D7D` (purple) and `#A74A67` (magenta) to `#EDFC54` (yellow). The gradient stop positions shift based on scroll progress, creating a day-to-night or dawn-to-dusk effect.
-2. **Stars** — Positioned above the viewport, they slide down as the user scrolls.
-3. **Moon** — Starts off-screen (top) and descends into view.
-4. **Sun** — Starts centered and moves upward while fading out.
-5. **Clouds** — Three cloud layers (bottom, left, right) that fade and slide out.
-6. **Mountains** — Three mountain layers (mountain-3 back, mountain-2 middle, mountain-1 front) that move at different speeds to create a depth effect.
+1. **Background** - A CSS gradient that transitions from `#0F2B9C` (deep blue) through `#673D7D` (purple) and `#A74A67` (magenta) to `#EDFC54` (yellow). The gradient stop positions shift based on scroll progress, creating a day-to-night or dawn-to-dusk effect.
+2. **Stars** - Positioned above the viewport, they slide down as the user scrolls.
+3. **Moon** - Starts off-screen (top) and descends into view.
+4. **Sun** - Starts centered and moves upward while fading out.
+5. **Clouds** - Three cloud layers (bottom, left, right) that fade and slide out.
+6. **Mountains** - Three mountain layers (mountain-3 back, mountain-2 middle, mountain-1 front) that move at different speeds to create a depth effect.
 
 ### ScrollTrigger Configuration
 
@@ -221,7 +221,7 @@ The background gradient is updated on every scroll event using `onUpdate`. The p
 
 ```javascript
 onUpdate: (self) => {
-  setBackground(Math.ceil(self.progress * 100 + 20))
+setBackground(Math.ceil(self.progress * 100 + 20))
 }
 ```
 
@@ -229,7 +229,7 @@ This creates a smooth color transition effect as the user scrolls through the pa
 
 ---
 
-## 🃏 Tarot Card Gallery
+## Tarot Card Gallery
 
 The complete Major Arcana (22 cards) used in CATAROT:
 
@@ -266,7 +266,7 @@ The card back design used for the flip animation:
 
 ---
 
-## 📖 Card Meanings System
+## Card Meanings System
 
 Each of the 22 Major Arcana cards contains two arrays of textual interpretations:
 
@@ -298,11 +298,11 @@ Each card also includes 15 to 25 entries in the `negativeMeaning` array. These p
 
 ```javascript
 export function getRandomMeaning(card) {
-  if (!card || !card.meaning || card.meaning.length === 0) {
-    return "No meaning available."
-  }
-  const randomIndex = Math.floor(Math.random() * card.meaning.length)
-  return card.meaning[randomIndex]
+if (!card || !card.meaning || card.meaning.length === 0) {
+return "No meaning available."
+}
+const randomIndex = Math.floor(Math.random() * card.meaning.length)
+return card.meaning[randomIndex]
 }
 ```
 
@@ -310,7 +310,7 @@ The function randomly selects one entry from the array, ensuring that every read
 
 ---
 
-## 📱 Mobile Responsiveness
+## Mobile Responsiveness
 
 The app uses modern CSS techniques to ensure a great experience on all screen sizes:
 
@@ -320,15 +320,15 @@ Instead of traditional breakpoint-based design with fixed pixel values at each b
 
 ```css
 .flip-card {
-  width: clamp(100px, 25vw, 450px);
+width: clamp(100px, 25vw, 450px);
 }
 
 .about h2 {
-  font-size: clamp(1.2rem, 6vw, 4rem);
+font-size: clamp(1.2rem, 6vw, 4rem);
 }
 
 .modal-meaning p {
-  font-size: clamp(0.65rem, 1.5vw, 1.4rem);
+font-size: clamp(0.65rem, 1.5vw, 1.4rem);
 }
 ```
 
@@ -352,7 +352,7 @@ Only minimal breakpoints are used for structural changes:
 
 ---
 
-## 🌐 Browser Support
+## Browser Support
 
 CATAROT is tested and works on:
 
@@ -371,7 +371,7 @@ CATAROT is tested and works on:
 
 ---
 
-## 📦 Deployment
+## Deployment
 
 ### Deploy to Vercel (Recommended)
 
@@ -379,7 +379,7 @@ The project is pre-configured for Vercel deployment with a `vercel.json` file:
 
 ```json
 {
-  "framework": "nextjs"
+"framework": "nextjs"
 }
 ```
 
@@ -407,7 +407,7 @@ No environment variables are required. The IP geolocation API is called client-s
 
 ---
 
-## ⚡ Performance
+## Performance
 
 - **Images**: All tarot card images are resized to 400px width (~200-450KB each) for optimal loading speed
 - **GSAP Bundle**: GSAP is loaded as an npm dependency and tree-shaken. Only the ScrollTrigger plugin is imported
@@ -417,7 +417,7 @@ No environment variables are required. The IP geolocation API is called client-s
 
 ---
 
-## 🔮 Major Arcana Card Meanings
+## Major Arcana Card Meanings
 
 Each card in the Major Arcana represents a different stage of the hero's journey, a spiritual path that every person walks in their own way. Here is a brief description of each card and its significance in a tarot reading:
 
@@ -489,7 +489,7 @@ The World represents completion, accomplishment, and wholeness. It is the final 
 
 ---
 
-## 🎨 CSS Architecture Deep Dive
+## CSS Architecture Deep Dive
 
 ### Responsive Strategy
 
@@ -510,8 +510,8 @@ This pattern is applied to font sizes, card widths, spacing, border-radius, and 
 The app uses CSS custom properties (variables) for its color scheme:
 ```css
 :root {
-  --primaryColor: #282a57;
-  --secondaryColor: #e4e4e4;
+--primaryColor: #282a57;
+--secondaryColor: #e4e4e4;
 }
 ```
 
@@ -543,28 +543,28 @@ No Grid layout or float-based approaches are used, keeping the CSS simple and ma
 
 ---
 
-## ⚙️ JavaScript Logic Walkthrough
+## JavaScript Logic Walkthrough
 
 ### Card Flip Mechanics
 
 ```javascript
 const flipCard = (index) => {
-  // Track which cards are already used to avoid duplicates
-  const usedIds = cards.filter(c => c).map(c => c.id)
-  const available = majorArcana.filter(c => !usedIds.includes(c.id))
-  const pool = available.length > 0 ? available : majorArcana
-  // Pick a random card from the available pool
-  const card = pool[Math.floor(Math.random() * pool.length)]
-  // Get a random meaning for this card
-  const meaning = getRandomMeaning(card)
-  // Create a new card object with the selected meaning
-  const newCard = { id: card.id, name: card.name, meaning }
-  // Update the cards array immutably
-  const newCards = [...cards]
-  newCards[index] = newCard
-  setCards(newCards)
-  // Open the modal with the new card
-  setSelectedCard(newCard)
+// Track which cards are already used to avoid duplicates
+const usedIds = cards.filter(c => c).map(c => c.id)
+const available = majorArcana.filter(c => !usedIds.includes(c.id))
+const pool = available.length > 0 ? available : majorArcana
+// Pick a random card from the available pool
+const card = pool[Math.floor(Math.random() * pool.length)]
+// Get a random meaning for this card
+const meaning = getRandomMeaning(card)
+// Create a new card object with the selected meaning
+const newCard = { id: card.id, name: card.name, meaning }
+// Update the cards array immutably
+const newCards = [...cards]
+newCards[index] = newCard
+setCards(newCards)
+// Open the modal with the new card
+setSelectedCard(newCard)
 }
 ```
 
@@ -578,12 +578,12 @@ Key design decisions:
 
 ```javascript
 const openReading = (card) => {
-  // If the card was opened from a previous state without a meaning
-  if (!card.meaning) {
-    const c = majorArcana.find(c => c.id === card.id)
-    card.meaning = getRandomMeaning(c)
-  }
-  setSelectedCard(card)
+// If the card was opened from a previous state without a meaning
+if (!card.meaning) {
+const c = majorArcana.find(c => c.id === card.id)
+card.meaning = getRandomMeaning(c)
+}
+setSelectedCard(card)
 }
 ```
 
@@ -592,15 +592,15 @@ This function handles the case where a card might not have a meaning assigned ye
 ### State Management
 
 Three pieces of state drive the application:
-1. **`cards`** — Array of 3 items (card objects or null)
-2. **`selectedCard`** — Currently displayed card in the modal (or null)
-3. **`lang`** — Detected language ('id' or 'en')
+1. **`cards`** - Array of 3 items (card objects or null)
+2. **`selectedCard`** - Currently displayed card in the modal (or null)
+3. **`lang`** - Detected language ('id' or 'en')
 
 No external state management library is needed. React's built-in `useState` and `useEffect` hooks are sufficient for this application's complexity level.
 
 ---
 
-## ❓ Frequently Asked Questions
+## Frequently Asked Questions
 
 **What is the Major Arcana?**
 The Major Arcana is the 22-card trump suit in a traditional tarot deck. These cards represent major life themes, spiritual lessons, and archetypal energies that shape our life journeys. Unlike the Minor Arcana (which deals with everyday events), the Major Arcana cards signify important life transitions and deep soul lessons.
@@ -625,7 +625,7 @@ The app requires an internet connection for initial loading of fonts from Google
 
 ---
 
-## 🧪 Development Notes
+## Development Notes
 
 ### Code Style Conventions
 
@@ -638,17 +638,17 @@ The app requires an internet connection for initial loading of fonts from Google
 ### Potential Enhancements
 
 Future features that could be added:
-- **Audio feedback** — Card flip sound effect and ambient background music
-- **Card spread animations** — Animated card dealing with staggered timing
-- **History tracking** — Save previous readings to localStorage
-- **Share functionality** — Generate shareable images of readings for social media
-- **Multiple languages** — Full translation support for more languages
-- **Dark/light theme** — Toggle between mystical dark mode and light mode
-- **Interactive card meanings** — Allow users to select specific aspects of a card's meaning to explore deeper
+- **Audio feedback** - Card flip sound effect and ambient background music
+- **Card spread animations** - Animated card dealing with staggered timing
+- **History tracking** - Save previous readings to localStorage
+- **Share functionality** - Generate shareable images of readings for social media
+- **Multiple languages** - Full translation support for more languages
+- **Dark/light theme** - Toggle between mystical dark mode and light mode
+- **Interactive card meanings** - Allow users to select specific aspects of a card's meaning to explore deeper
 
 ---
 
-## 🖼 Image Optimization
+## Image Optimization
 
 The tarot card images used in CATAROT have been carefully optimized for web delivery through a multi-step process:
 
@@ -669,7 +669,7 @@ All images are served statically from the `public/images/` directory by Next.js,
 
 ---
 
-## 🔒 Security and Privacy
+## Security and Privacy
 
 ### Data Collection
 CATAROT is designed with privacy as a core principle. The application collects no user data, stores no cookies, and maintains no user accounts or sessions. There is no backend database, no authentication system, and no analytics tracking code embedded in the application.
@@ -685,7 +685,7 @@ All application code runs client-side in the browser. No server-side rendering o
 
 ---
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 ### Common Issues
 
@@ -719,7 +719,7 @@ This can happen if the card object does not have a `meaning` property. The `open
 
 ---
 
-## 🎯 Design Philosophy
+## Design Philosophy
 
 ### Why a Cat Theme?
 The cat theme was chosen to add personality and warmth to what could otherwise be a serious or intimidating tarot reading experience. Cats are associated with mystery, intuition, and independence - qualities that align well with the practice of tarot. The playful tone ("Ask Meow!") lowers the barrier to entry and makes the app feel more approachable to casual users who might be curious about tarot but not ready for a serious spiritual practice.
@@ -732,13 +732,13 @@ The deep navy background (`#282a57`) creates a night-sky atmosphere that evokes 
 
 ### Typography
 Three fonts are used to create visual hierarchy and personality:
-- **Margarine** (cursive, display) — Used for the CATAROT logo and card names, adding a playful, hand-drawn feel
-- **Slackey** (display) — Used for the main call-to-action heading, giving it a bold, attention-grabbing presence
-- **Cause** (sans-serif) — Used for the reading text, providing excellent readability for longer passages
+- **Margarine** (cursive, display) - Used for the CATAROT logo and card names, adding a playful, hand-drawn feel
+- **Slackey** (display) - Used for the main call-to-action heading, giving it a bold, attention-grabbing presence
+- **Cause** (sans-serif) - Used for the reading text, providing excellent readability for longer passages
 
 ---
 
-## 📖 Tarot Reading Tips
+## Tarot Reading Tips
 
 ### How to Get the Most Out of Your Reading
 
@@ -759,7 +759,7 @@ Consider keeping a journal of the cards and meanings you receive, along with you
 
 ---
 
-## 🛠 Customization Guide
+## Customization Guide
 
 ### Changing the Card Artwork
 To replace the tarot card images with your own artwork:
@@ -788,13 +788,13 @@ To customize the parallax animation:
 To customize the color scheme:
 1. Open `src/styles/globals.css`
 2. Modify the CSS custom properties in the `:root` block:
-   - `--primaryColor` controls the main background
-   - `--secondaryColor` controls the text color
+- `--primaryColor` controls the main background
+- `--secondaryColor` controls the text color
 3. Update the parallax gradient in `Parallax.js` to match your new theme
 
 ---
 
-## ♿ Accessibility
+## Accessibility
 
 CATAROT is built with basic accessibility considerations:
 - All images include appropriate `alt` attributes
@@ -811,7 +811,7 @@ CATAROT is built with basic accessibility considerations:
 
 ---
 
-## 📈 Search Engine Optimization
+## Search Engine Optimization
 
 CATAROT is built with Next.js which provides excellent SEO capabilities out of the box:
 - **Static Generation**: The main page is statically generated at build time, meaning search engines can crawl and index the HTML content without executing JavaScript
@@ -822,15 +822,15 @@ CATAROT is built with Next.js which provides excellent SEO capabilities out of t
 
 ---
 
-## 📜 A Brief History of Tarot
+## A Brief History of Tarot
 
 Tarot cards have a rich and fascinating history that spans more than five centuries. Understanding this history adds depth to the reading experience in CATAROT.
 
 ### Origins in Renaissance Italy
-The earliest known tarot decks appeared in northern Italy in the mid-15th century, during the Renaissance period. These early decks, known as "carte da trionfi" (cards of triumphs), were created for贵族 families such as the Visconti and Sforza dynasties of Milan. The cards were hand-painted by artists and used for playing a popular card game similar to modern bridge, not for divination or fortune-telling.
+The earliest known tarot decks appeared in northern Italy in the mid-15th century, during the Renaissance period. These early decks, known as "carte da trionfi" (cards of triumphs), were created for noble families such as the Visconti and Sforza dynasties of Milan. The cards were hand-painted by artists and used for playing a popular card game similar to modern bridge, not for divination or fortune-telling.
 
 ### Evolution into Divination
-The use of tarot for divination and mystical purposes began in the late 18th century, when French occultists like Antoine Court de Gébelin and Jean-Baptiste Alliette (known as Etteilla) proposed that the cards contained ancient Egyptian wisdom and esoteric knowledge. Court de Gébelin published essays claiming that the word "tarot" came from the Egyptian word "tar" (path) and "ro" (royal), meaning "the royal path" - a theory that has since been debunked but that captured the popular imagination.
+The use of tarot for divination and mystical purposes began in the late 18th century, when French occultists like Antoine Court de G-belin and Jean-Baptiste Alliette (known as Etteilla) proposed that the cards contained ancient Egyptian wisdom and esoteric knowledge. Court de G-belin published essays claiming that the word "tarot" came from the Egyptian word "tar" (path) and "ro" (royal), meaning "the royal path" - a theory that has since been debunked but that captured the popular imagination.
 
 ### The Rider-Waite-Smith Deck
 The most influential tarot deck in the modern era is the Rider-Waite-Smith deck, first published in 1909. This deck was created by Arthur Edward Waite, a British occultist and member of the Hermetic Order of the Golden Dawn, and illustrated by Pamela Colman Smith, a talented artist and fellow Golden Dawn member. The Rider-Waite-Smith deck was revolutionary because it was the first deck to feature illustrated scenes on all 78 cards, including the Minor Arcana (which previously had only geometric patterns). This made the deck more accessible to beginners and more visually engaging for readings. The CATAROT app uses Major Arcana cards inspired by this tradition.
@@ -843,7 +843,7 @@ In the 21st century, tarot has experienced a resurgence in popularity, particula
 
 ---
 
-## 🃏 How to Interpret Your Reading
+## How to Interpret Your Reading
 
 Each reading in CATAROT consists of three cards flipped one at a time. While each card's meaning can be read individually, there are several ways to interpret the three cards together as a coherent message.
 
@@ -870,7 +870,7 @@ Ultimately, the most powerful interpretation is the one that resonates with you 
 
 ---
 
-## 🎯 The Fool's Journey Through the Major Arcana
+## The Fool's Journey Through the Major Arcana
 
 The 22 cards of the Major Arcana tell a story known as the Fool's Journey, a narrative of spiritual growth and self-realization:
 
@@ -885,7 +885,7 @@ The Fool confronts their shadow and achieves enlightenment. **The Devil** reveal
 
 ---
 
-## 🧩 Card Keywords Quick Reference
+## Card Keywords Quick Reference
 
 | # | Card | Upright Keywords | Reversed Keywords |
 |---|------|-----------------|-------------------|
@@ -914,7 +914,7 @@ The Fool confronts their shadow and achieves enlightenment. **The Devil** reveal
 
 ---
 
-## 🌟 The Cats and Tarot Connection
+## The Cats and Tarot Connection
 
 Cats have been associated with mystical and spiritual practices throughout history, making them the perfect mascot for a tarot reading app:
 
@@ -927,7 +927,7 @@ The CATAROT name itself combines "cat" and "tarot," symbolizing the fusion of fe
 
 ---
 
-## 🧪 Testing
+## Testing
 
 The application can be tested manually by:
 1. Running `npm run build` to verify that the Next.js build completes without errors
@@ -940,7 +940,7 @@ Automated testing (unit tests, integration tests) is not currently implemented b
 
 ---
 
-## ❓ FAQ
+## FAQ
 
 ### General Questions
 
@@ -995,7 +995,7 @@ A: Yes. The three-card spread works well for readings about other people, relati
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feature/amazing-feature`)
@@ -1005,7 +1005,7 @@ A: Yes. The three-card spread works well for readings about other people, relati
 
 ---
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - The 22 Major Arcana tarot card artwork and their rich symbolic traditions spanning centuries of esoteric wisdom
 - GSAP (GreenSock) for providing one of the most powerful and performant animation libraries available for web development
@@ -1015,7 +1015,7 @@ A: Yes. The three-card spread works well for readings about other people, relati
 
 ---
 
-## 👤 Credits
+## Credits
 
 Created with love by **Febvn**
 
@@ -1023,6 +1023,6 @@ Created with love by **Febvn**
 
 ---
 
-## 📄 License
+## License
 
-This project is for personal and educational use only. All tarot card artwork belongs to their respective creators. If you are the copyright holder of any artwork used in this project and would like attribution or have concerns, please open an issue on the GitHub repository.
+This project is for personal and educational use only. All tarot card artwork belongs to their respective creators and original sources. If you are the copyright holder of any artwork used in this project and would like attribution, correction, removal, or have any other concerns, please open an issue on the GitHub repository for prompt attention and fair resolution.
