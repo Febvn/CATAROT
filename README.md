@@ -48,6 +48,14 @@ Detection uses IP geolocation (`ip-api.com`) with browser language fallback.
 
 22 Major Arcana cards with curated meanings and reversed (negative) interpretations. Each flip picks a random meaning — no two readings are the same.
 
+## 🖼 Gallery
+
+| Card Back | Sample Cards |
+|:---:|:---:|
+| ![Card Back](https://raw.githubusercontent.com/Febvn/CATAROT/master/public/images/back.JPG) | ![0. The Fool](https://raw.githubusercontent.com/Febvn/CATAROT/master/public/images/0.%20The%20Fool.png) ![1. The Magician](https://raw.githubusercontent.com/Febvn/CATAROT/master/public/images/1.%20The%20Magician.png) ![2. The High Priestess](https://raw.githubusercontent.com/Febvn/CATAROT/master/public/images/2.%20The%20High%20Priestess.png) |
+
+All 22 Major Arcana cards are included with beautiful artwork.
+
 ## 👤 Credits
 
 Created with love by **Febvn**
