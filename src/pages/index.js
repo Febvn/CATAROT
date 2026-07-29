@@ -1,16 +1,20 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Parallax from '@/components/Parallax'
 import { majorArcana, getRandomMeaning } from '@/data/tarotData'
-import { getLanguage } from '@/utils/lang'
+import { detectLanguage } from '@/utils/lang'
 
 function Home() {
   const [cards, setCards] = useState([null, null, null])
   const [selectedCard, setSelectedCard] = useState(null)
-  const lang = getLanguage()
+  const [lang, setLang] = useState(null)
+
+  useEffect(() => {
+    detectLanguage().then(setLang)
+  }, [])
 
   const texts = {
-    id: { title: 'Katakan Apa yang Ingin Kamu Ketahui Meooww!!', credit: 'Dibuat Oleh Febvn', close: 'Tutup' },
-    en: { title: 'Tell Me what u Want to know Meooww!!', credit: 'Created By Febvn', close: 'Close' },
+    id: { title: 'Katakan Apa yang Ingin Kamu Ketahui Meooww!!', credit: 'Dibuat Oleh Febvn' },
+    en: { title: 'Tell Me what u Want to know Meooww!!', credit: 'Created By Febvn' },
   }
   const t = texts[lang] || texts.en
 
