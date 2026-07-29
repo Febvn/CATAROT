@@ -327,13 +327,14 @@ body {
 
 @media (max-width: 768px) {
     .modal-body {
-        flex-direction: column;
-        align-items: center;
-        gap: 30px;
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 15px;
     }
 
     .modal-card {
-        width: 200px;
+        width: 120px;
+        flex-shrink: 0;
     }
 
     .modal-content {
@@ -341,24 +342,26 @@ body {
     }
 
     .modal-meaning h3 {
-        font-size: 1.5rem;
-        text-align: center;
+        font-size: 1rem;
+        text-align: left;
     }
 
     .modal-meaning {
         padding-top: 0;
-        text-align: center;
+        text-align: left;
+    }
+
+    .modal-meaning p {
+        font-size: 0.75rem;
+        line-height: 1.4;
     }
 
     .modal-close {
         top: 10px;
         right: 15px;
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
-}
 
-/* Mobile Responsive */
-@media (max-width: 768px) {
     .copy h1 {
         font-size: 3.5rem;
     }
@@ -369,12 +372,12 @@ body {
     }
 
     .about h2 {
-        font-size: 2.5rem;
+        font-size: 1.5rem;
     }
 
     .about p {
         width: 85%;
-        font-size: 0.95rem;
+        font-size: 0.8rem;
     }
 
     .sun {
@@ -403,12 +406,13 @@ body {
     }
 
     .card-row {
-        flex-direction: column;
-        align-items: center;
+        flex-direction: row;
+        justify-content: center;
+        gap: 10px;
     }
 
     .flip-card {
-        width: 250px;
+        width: 110px;
     }
 
     .readings {
@@ -421,7 +425,7 @@ body {
     }
 
     .card-back {
-        width: 250px;
+        width: 110px;
     }
 }
 
@@ -431,12 +435,12 @@ body {
     }
 
     .about h2 {
-        font-size: 1.8rem;
+        font-size: 1.2rem;
     }
 
     .about p {
         width: 90%;
-        font-size: 0.9rem;
+        font-size: 0.75rem;
     }
 
     .sun {
@@ -456,7 +460,28 @@ body {
         bottom: 10px;
     }
 
+    .card-row {
+        gap: 6px;
+    }
+
     .flip-card {
-        width: 200px;
+        width: 85px;
+    }
+
+    .card-back {
+        width: 85px;
+    }
+
+    .modal-card {
+        width: 100px;
+    }
+
+    .modal-meaning h3 {
+        font-size: 0.85rem;
+    }
+
+    .modal-meaning p {
+        font-size: 0.65rem;
+        line-height: 1.3;
     }
 }
