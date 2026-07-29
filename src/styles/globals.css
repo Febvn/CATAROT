@@ -337,6 +337,10 @@ body {
         flex-shrink: 0;
     }
 
+    .modal-card img {
+        border-radius: 8px;
+    }
+
     .modal-content {
         padding: 0;
     }
@@ -506,6 +510,10 @@ body {
 
     .modal-card {
         width: 100px;
+    }
+
+    .modal-card img {
+        border-radius: 6px;
     }
 
     .modal-meaning h3 {
