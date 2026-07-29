@@ -1,10 +1,18 @@
 import { useState } from 'react'
 import Parallax from '@/components/Parallax'
 import { majorArcana, getRandomMeaning } from '@/data/tarotData'
+import { getLanguage } from '@/utils/lang'
 
 function Home() {
   const [cards, setCards] = useState([null, null, null])
   const [selectedCard, setSelectedCard] = useState(null)
+  const lang = getLanguage()
+
+  const texts = {
+    id: { title: 'Katakan Apa yang Ingin Kamu Ketahui Meooww!!', credit: 'Dibuat Oleh Febvn', close: 'Tutup' },
+    en: { title: 'Tell Me what u Want to know Meooww!!', credit: 'Created By Febvn', close: 'Close' },
+  }
+  const t = texts[lang] || texts.en
 
   const flipCard = (index) => {
     const usedIds = cards.filter(c => c).map(c => c.id)
@@ -31,9 +39,7 @@ function Home() {
     <>
       <Parallax />
       <div className='about'>
-        <h2>
-          Tell Me what u Want to know Meooww!!
-        </h2>
+        <h2>{t.title}</h2>
         <div className='card-row'>
           {cards.map((card, i) => (
             <div key={i} className={`flip-card ${card ? 'flipped' : ''}`} onClick={() => card ? openReading(card) : flipCard(i)}>
@@ -50,7 +56,7 @@ function Home() {
             </div>
           ))}
         </div>
-        <p className='credit'>Created By Febvn</p>
+        <p className='credit'>{t.credit}</p>
       </div>
 
       {selectedCard && (
