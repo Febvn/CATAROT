@@ -14,7 +14,7 @@ function Home() {
 
   const texts = {
     id: { title: 'Katakan Apa yang Ingin Kamu Ketahui Meooww!!', credit: 'Dibuat Oleh Febvn' },
-    en: { title: 'Tell Me what u Want to know Meooww!!', credit: 'Created By Febvn' },
+    en: { title: 'Curiosity Killed the Cat? Ask Meow!', credit: 'Created By Febvn' },
   }
   const t = texts[lang] || texts.en
 
