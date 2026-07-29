@@ -204,16 +204,18 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: auto;
+    height: 100%;
     transform: rotateY(180deg);
     z-index: 2;
+    overflow: hidden;
     border-radius: 20px;
 }
 
 .flip-back img {
     width: 100%;
-    height: auto;
+    height: 100%;
     display: block;
+    object-fit: cover;
 }
 
 .readings {
