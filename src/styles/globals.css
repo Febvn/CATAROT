@@ -412,6 +412,14 @@ body {
         width: 200px;
     }
 
+    .flip-card .flip-front img {
+        border-radius: 10px;
+    }
+
+    .flip-back {
+        border-radius: 10px;
+    }
+
     .readings {
         flex-direction: column;
         align-items: center;
@@ -463,6 +471,14 @@ body {
 
     .flip-card {
         width: 150px;
+    }
+
+    .flip-card .flip-front img {
+        border-radius: 8px;
+    }
+
+    .flip-back {
+        border-radius: 8px;
     }
 
     .card-back {
