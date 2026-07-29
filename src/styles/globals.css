@@ -369,8 +369,8 @@ body {
     }
 
     .about {
-        min-height: auto;
-        padding: 3% 10% 6%;
+        min-height: 100vh;
+        padding: 3% 10%;
     }
 
     .about h2 {
@@ -445,8 +445,8 @@ body {
     }
 
     .about {
-        min-height: auto;
-        padding: 3% 10% 8%;
+        min-height: 100vh;
+        padding: 3% 10%;
     }
 
     .about h2 {
