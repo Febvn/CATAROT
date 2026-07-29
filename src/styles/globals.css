@@ -368,6 +368,11 @@ body {
         font-size: 0.85rem;
     }
 
+    .about {
+        min-height: auto;
+        padding: 3% 10% 6%;
+    }
+
     .about h2 {
         font-size: 1.5rem;
     }
@@ -437,6 +442,11 @@ body {
 @media (max-width: 480px) {
     .copy h1 {
         font-size: 2.5rem;
+    }
+
+    .about {
+        min-height: auto;
+        padding: 3% 10% 8%;
     }
 
     .about h2 {
